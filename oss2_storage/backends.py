@@ -100,7 +100,7 @@ class BaseStorage(BucketOperationMixin, Storage):
         return name
 
     def _open(self, name, mode='rb'):
-        return AliyunFile(name, self, mode)
+        return Oss2File(name, self, mode)
 
     def _save(self, name, content):
         target_name = self._get_target_name(name)
